@@ -6,7 +6,8 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
     <title>Matrix Calculator</title>
-    <link href="./favicon-32x32.png" type="image/x-icon" rel="icon" />
+    <base href="/matrix_calculator/">
+    <link href="/matrix_calculator/favicon-32x32.png" type="image/x-icon" rel="icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@100&display=swap" rel="stylesheet" />
@@ -433,7 +434,7 @@
             let matrixA = [];
             let matrixB = [];
             let matrixR = [];
-            
+
             //input에 value값 가져오기
             const matrixSize1 = document.getElementById("matrixValueA1");
             const matrixSize2 = document.getElementById("matrixValueA2");
@@ -589,7 +590,7 @@
                             visualizeMatrix("resultA", matrixA);
                             //alert(matrixA);
                             break;
-                            // matrixB일 경우
+                        // matrixB일 경우
                         case "resultB":
                             // 해당하는 위치에 변경된 값을 행렬 B에 적용
                             matrixB[arrayIndex][arrayIndex2] = changeValue;
@@ -646,8 +647,8 @@
                 if (matrixA.length === 0 || matrixB.length === 0) {
                     setTimeout(displayEventR2, 500);
                     document.getElementById("resultOutput").innerHTML =
-                    "행렬을 생성하지 않아 뺄셈 연산이 불가능합니다.";
-                //연산 조건이 맞으면서 plus 일 경우
+                        "행렬을 생성하지 않아 뺄셈 연산이 불가능합니다.";
+                    //연산 조건이 맞으면서 plus 일 경우
                 } else if (
                     matrixA.length === matrixB.length &&
                     matrixA[0].length === matrixB[0].length &&
@@ -660,7 +661,7 @@
                     }
                     visualizeMatrix("resultOutput", matrixR);
                     setTimeout(displayEventR2, 500);
-                //연산 조건이 맞으면서 minus 일 경우
+                    //연산 조건이 맞으면서 minus 일 경우
                 } else if (
                     matrixA.length === matrixB.length &&
                     matrixA[0].length === matrixB[0].length &&
@@ -673,11 +674,11 @@
                     }
                     visualizeMatrix("resultOutput", matrixR);
                     setTimeout(displayEventR2, 500);
-                // 행렬이 생성은 되어 있지만 연산 조건에 맞지 않는 모든 경우
+                    // 행렬이 생성은 되어 있지만 연산 조건에 맞지 않는 모든 경우
                 } else {
                     setTimeout(displayEventR2, 500);
                     document.getElementById("resultOutput").innerHTML =
-                    "두 행렬이 일치하지 않아 연산이 불가능합니다.";
+                        "두 행렬이 일치하지 않아 연산이 불가능합니다.";
                 }
             }
 
